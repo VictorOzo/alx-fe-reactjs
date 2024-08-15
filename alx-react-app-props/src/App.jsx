@@ -1,23 +1,14 @@
 import './App.css';
-import WelcomeMessage from './components/WelcomeMessage';
-import Footer from './components/Footer';
-import MainContent from './components/MainContent';
-import Header from './components/Header';
-import UserProfile from './components/UserProfile';
+import UserDetails from './components/ProfilePage';
+import { UserContext } from './Contexts/UserContext';
 
 function App() {
+	const userData = { name: 'Jane Doe', email: 'jane.doe@example.com' };
+
 	return (
-		<>
-			<Header />
-			<MainContent />
-			<WelcomeMessage />
-			<UserProfile
-				name='Alice'
-				age='25'
-				bio='Loves hiking and photography'
-			/>
-			<Footer />
-		</>
+		<UserContext.Provider value={{ userData }}>
+			<UserDetails />
+		</UserContext.Provider>
 	);
 }
 
