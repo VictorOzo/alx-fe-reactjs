@@ -3,18 +3,31 @@ import { Link } from 'react-router-dom';
 function Navbar() {
 	return (
 		<div>
-			<ul>
+			<ul
+				style={{
+					display: 'flex',
+					justifyContent: 'space-evenly',
+					listStyle: 'none',
+				}}>
 				<li>
-					<Link to='/'>Home</Link>
+					<Link to='/' style={{ color: '#fff' }}>
+						Home
+					</Link>
 				</li>
 				<li>
-					<Link to='/about'>About</Link>
+					<Link to='/about' style={{ color: '#fff' }}>
+						About
+					</Link>
 				</li>
 				<li>
-					<Link to='/services'>Services</Link>
+					<Link to='/services' style={{ color: '#fff' }}>
+						Services
+					</Link>
 				</li>
 				<li>
-					<Link to='/contact'>Contact</Link>
+					<Link to='/contact' style={{ color: '#fff' }}>
+						Contact
+					</Link>
 				</li>
 			</ul>
 		</div>
