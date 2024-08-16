@@ -8,6 +8,7 @@ function Navbar() {
 					display: 'flex',
 					justifyContent: 'space-evenly',
 					listStyle: 'none',
+					backgroundColor:'transparent'
 				}}>
 				<li>
 					<Link to='/' style={{ color: '#fff' }}>
