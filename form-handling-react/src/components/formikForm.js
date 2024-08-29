@@ -2,7 +2,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 function formikForm() {
-	const UserSchema = Yup.create().shape({
+	const UserSchema = Yup.object().shape({
 		username: Yup.string().required(),
 		email: Yup.string().email().required(),
 		password: Yup.string().min(8).max(12).required(),
