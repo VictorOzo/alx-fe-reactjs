@@ -1,11 +1,11 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as yup from 'yup';
+import * as Yup from 'yup';
 
 function formikForm() {
-	const UserSchema = yup.create().shape({
-		username: yup.string().required(),
-		email: yup.string().email().required(),
-		password: yup.string().min(8).max(12).required(),
+	const UserSchema = Yup.create().shape({
+		username: Yup.string().required(),
+		email: Yup.string().email().required(),
+		password: Yup.string().min(8).max(12).required(),
 	});
 
 	return (
