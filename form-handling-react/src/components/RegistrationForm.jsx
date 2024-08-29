@@ -5,9 +5,7 @@ export const RegistrationForm = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
-	
-	
-	
+
 	//event handlers for form
 	const userNameChange = (e) => {
 		setUserName(e.target.value);
@@ -22,18 +20,16 @@ export const RegistrationForm = () => {
 		e.preventDefault();
 	};
 
-
 	// submit form
 	const formSubmit = (e) => {
-
 		// form validation
-		if (!username.length < 3) {
+		if (!username) {
 			setError('Please enter a username');
 		}
-		if (!email.includes('@') || !email.includes('.')) {
+		if (!email) {
 			setError('Please enter a Valid email');
 		}
-		if (!password.length < 8) {
+		if (!password) {
 			setError('Please enter a Strong Password');
 		}
 
