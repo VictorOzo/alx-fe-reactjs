@@ -24,13 +24,13 @@ export const RegistrationForm = () => {
 	const formSubmit = (e) => {
 		// form validation
 		if (!username) {
-			setError('Please enter a username');
+			setError();
 		}
 		if (!email) {
-			setError('Please enter a Valid email');
+			setError();
 		}
 		if (!password) {
-			setError('Please enter a Strong Password');
+			setError();
 		}
 
 		e.preventDefault();
