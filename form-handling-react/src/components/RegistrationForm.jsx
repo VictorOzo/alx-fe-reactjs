@@ -4,7 +4,7 @@ export const RegistrationForm = () => {
 	const [username, setUserName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const [error, setError] = useState('');
+	const [error, setErrors] = useState('');
 
 	//event handlers for form
 	const userNameChange = (e) => {
@@ -24,13 +24,13 @@ export const RegistrationForm = () => {
 	const formSubmit = (e) => {
 		// form validation
 		if (!username) {
-			setError();
+			setErrors();
 		}
 		if (!email) {
-			setError();
+			setErrors();
 		}
 		if (!password) {
-			setError();
+			setErrors();
 		}
 
 		e.preventDefault();
