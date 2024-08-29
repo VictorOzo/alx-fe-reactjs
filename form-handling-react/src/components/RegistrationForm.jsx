@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export const RegistrationForm = () => {
-	const [userName, setUserName] = useState('');
+	const [username, setUserName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
@@ -51,7 +51,7 @@ export const RegistrationForm = () => {
 				<input
 					type='text'
 					placeholder='User Name'
-					value={userName}
+					value={username}
 					onChange={userNameChange}
 				/>
 				<label>Email:</label>
