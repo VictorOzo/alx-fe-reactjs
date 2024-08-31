@@ -16,7 +16,7 @@ function App() {
 							</ProtectedRoute>
 						}
 					/>
-					<Route path="/blog/:Id" element={<BlogPostDetails />} />
+					<Route path="/blog/:id" element={<BlogPostDetails />} />
 				</Routes>
 			</Router>
 		</>
