@@ -4,7 +4,7 @@ import BlogPostDetails from './BlogPostDetails';
 const BlogPost =()=> {
 	return (
 		<Routes>
-			<Route path='/blog/:postId' element={<BlogPostDetails />} />
+			<Route path='/blog/:Id' element={<BlogPostDetails />} />
 		</Routes>
 	);
 }
