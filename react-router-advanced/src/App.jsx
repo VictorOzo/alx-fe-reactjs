@@ -1,11 +1,14 @@
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Profile from './components/Profile';
 
 function App() {
 	return (
 		<>
-			React Router Advanced
-			<Profile />
+			<Router>
+				<Routes>
+					<Route path='/' element={<Profile />} />
+				</Routes>
+			</Router>
 		</>
 	);
 }

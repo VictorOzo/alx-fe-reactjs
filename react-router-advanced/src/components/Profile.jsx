@@ -1,13 +1,17 @@
 import ProfileDetails from './ProfileDetails';
 import ProfileSettings from './ProfileSettings';
+import {  Route, Routes } from 'react-router-dom';
 
 const Profile = () => {
 	return (
-		<div>
-			Profile
-			<ProfileSettings />
-			<ProfileDetails />
-		</div>
+		<>
+			
+				<Routes>
+					<Route path='*' element={<ProfileDetails />} />
+					<Route path='settings' element={<ProfileSettings />} />
+				</Routes>
+			
+		</>
 	);
 };
 
