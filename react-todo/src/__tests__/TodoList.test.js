@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import TodoList from '../components/TodoList';
+import TodoList from '../components/TodoList.jsx';
+import React from 'react';
 
 test('renders the initial list of todos', () => {
 	render(<TodoList />);
