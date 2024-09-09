@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import '../data.json';
+import data from '../data.json';
 
 export const HomePage = () => {
-	const [recipes, setRecipes] = useState([]);
+	const [recipes, setRecipes] = useState(data);
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await fetch('data.json');
 			const data = await response.json();
-            setRecipes(data);
-            console.log(data);
+			setRecipes(data);
 		};
 
 		fetchData();
@@ -16,7 +15,7 @@ export const HomePage = () => {
 	return (
 		<div className='container px-4 py-8 mx-auto'>
 			<h1 className='mb-4 text-3xl font-bold'>Delicious Recipes</h1>
-			<div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
+			<div className='grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				{recipes.map((recipe) => (
 					<div
 						key={recipe.id}
