@@ -13,7 +13,7 @@ export const HomePage = () => {
 		fetchData();
 	}, []);
 	return (
-		<div className='container px-4 py-8 mx-auto'>
+		<div className='container px-4 py-8 mx-auto '>
 			<h1 className='mb-4 text-3xl font-bold'>Delicious Recipes</h1>
 			<div className='grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				{recipes.map((recipe) => (
