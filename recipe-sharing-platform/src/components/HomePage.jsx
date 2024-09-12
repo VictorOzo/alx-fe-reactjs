@@ -1,40 +1,40 @@
 import { useEffect, useState } from 'react';
-import data from '../data.json';
+import { Link } from 'react-router-dom';
 
-export const HomePage = () => {
-	const [recipes, setRecipes] = useState(data);
+const HomePage = () => {
+	const [recipes, setRecipes] = useState([]);
+
 	useEffect(() => {
-		const fetchData = async () => {
-			const response = await fetch('data.json');
-			const data = await response.json();
-			setRecipes(data);
-		};
-
-		fetchData();
+		fetch('/data.json')
+			.then((response) => response.json())
+			.then((data) => setRecipes(data));
 	}, []);
+
 	return (
-		<div className='container px-4 py-8 mx-auto '>
-			<h1 className='mb-4 text-3xl font-bold'>Delicious Recipes</h1>
-			<div className='grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+		<div className='container p-4 mx-auto'>
+			<h1 className='mb-8 text-4xl font-bold text-center'>
+				Recipe Sharing Platform
+			</h1>
+			<div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
 				{recipes.map((recipe) => (
 					<div
 						key={recipe.id}
-						className='overflow-hidden rounded-lg shadow-md'>
+						className='overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-lg'>
 						<img
 							src={recipe.image}
 							alt={recipe.title}
 							className='object-cover w-full h-48'
 						/>
 						<div className='p-4'>
-							<h3 className='mb-2 text-lg font-medium'>
+							<h3 className='mb-2 text-xl font-semibold'>
 								{recipe.title}
 							</h3>
-							<p className='text-gray-700'>{recipe.summary}</p>
-							<a
-								href={`/recipes/${recipe.id}`}
-								className='text-indigo-600 hover:text-indigo-800'>
-								View Recipe
-							</a>
+							<p className='text-gray-600'>{recipe.summary}</p>
+							<Link to={`/recipe/${recipe.id}`}>
+								<button className='px-4 py-2 mt-4 text-white transition duration-300 bg-green-500 rounded-lg hover:bg-green-600'>
+									View Recipe
+								</button>
+							</Link>
 						</div>
 					</div>
 				))}
@@ -42,3 +42,5 @@ export const HomePage = () => {
 		</div>
 	);
 };
+
+export default HomePage;

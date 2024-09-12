@@ -1,6 +1,6 @@
 import './App.css';
-import { HomePage } from './components/HomePage';
-import { RecipeDetail } from './components/RecipeDetail';
+import  HomePage  from './components/HomePage';
+import  RecipeDetail  from './components/RecipeDetail';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
