@@ -1,11 +1,11 @@
 import './App.css'
-import Services from './components/Services'
+import Search from './components/Search'
 
 function App() {
  
   return (
     <>
-     <Services/>
+     <Search/>
     </>
   )
 }
