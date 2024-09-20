@@ -30,7 +30,7 @@ const Search = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex justify-center">
         <input
           type="text"
           value={searchTerm}
