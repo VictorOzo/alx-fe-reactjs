@@ -1,8 +1,16 @@
-import axios from "axios";
+export const fetchUserData = async (username, location = "", minRepos = "") => {
+  const queryParts = [`${username}`];
+  if (location) queryParts.push(`location:${location}`);
+  if (minRepos) queryParts.push(`repos:>=${minRepos}`);
 
-export const fetchUserData = async (searchTerm) => {
-  const response = await axios.get(
-    `https://api.github.com/users/${searchTerm}`,
+  const query = queryParts.join(" ");
+  const response = await fetch(
+    `https://api.github.com/search/users?q=${encodeURIComponent(query)}`,
   );
-  return response.data;
+
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+
+  return await response.json();
 };
