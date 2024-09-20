@@ -30,7 +30,7 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -51,7 +51,7 @@ const Search = () => {
           </a>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
